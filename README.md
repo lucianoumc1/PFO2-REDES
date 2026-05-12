@@ -19,15 +19,12 @@ El servidor expone rutas JSON para dar de alta usuarios, iniciar sesión y cerra
 ```
 ├── servidor.py       # App Flask y rutas
 ├── cliente.py        # Menú en consola contra la API
-├── test_api.py       # Comprobaciones automatizadas
-├── setup_data.py     # Usuarios de ejemplo (opcional)
-├── install.py        # Instalador con venv (opcional)
+├── setup_data.py     # Usuarios de ejemplo
+├── install.py        # Instalador con venv
 ├── requirements.txt
 ├── README.md
 └── tareas.db         # Se crea al arrancar el servidor
 ```
-
-Si tienes carpeta `screenshots/` u otras capturas, puedes dejarlas ahí; no son obligatorias para ejecutar el código.
 
 ## Instalación y configuración
 
@@ -37,7 +34,6 @@ Si tienes carpeta `screenshots/` u otras capturas, puedes dejarlas ahí; no son 
 git clone https://github.com/lucianoumc1/PFO2-REDES.git
 cd PFO2-REDES
 ```
-
 (El nombre de la carpeta puede variar según cómo lo hayas clonado.)
 
 ### 2. Entorno virtual (recomendado)
@@ -54,9 +50,6 @@ En Linux o macOS: `source venv/bin/activate`
 ```bash
 pip install -r requirements.txt
 ```
-
-Ahí están Flask, bcrypt, Werkzeug y requests.
-
 ### 4. Arrancar el servidor
 
 ```bash
@@ -78,9 +71,6 @@ python cliente.py
 ```
 
 Desde el menú puedes registrar usuario, hacer login, pedir `/tareas` (comprueba que responde), ver `/status`, logout y salir.
-
-**Postman, curl u otra herramienta**  
-Los ejemplos de la sección siguiente sirven igual; para login conviene guardar la cookie de sesión si luego vas a llamar a rutas que la usen (hoy el flujo principal es registro + login + logout).
 
 ## API endpoints
 
@@ -168,10 +158,6 @@ CREATE TABLE tareas (
 
 Es un solo archivo, fácil de borrar y regenerar en desarrollo si necesitas empezar de cero.
 
-## Capturas de pantalla
-
-Puedes documentar la home (`/`), el menú del `cliente.py` y la página de `/tareas` con imágenes en esta carpeta del repo. Los textos del cliente pueden incluir iconos en el menú; lo importante es que el servidor y la API coincidan con lo descrito arriba.
-
 ## Casos de prueba
 
 Ejemplos con curl (con el servidor levantado):
@@ -206,8 +192,11 @@ curl -X POST http://localhost:5000/login \
 ```bash
 curl -X GET http://localhost:5000/tareas
 ```
+<img width="1586" height="910" alt="screenWeb" src="https://github.com/user-attachments/assets/1f19f279-96b0-4e38-b992-f7f6d45c8d26" />
+<img width="484" height="528" alt="screen3" src="https://github.com/user-attachments/assets/7337c65b-726c-4250-b3ce-2b83e25a7822" />
+<img width="577" height="983" alt="screen2" src="https://github.com/user-attachments/assets/e0ad324c-7ad8-461d-afef-4ad13d1e7afa" />
+<img width="638" height="952" alt="screen1" src="https://github.com/user-attachments/assets/605d4879-07b0-480f-9563-478bb4893a42" />
 
-Para una batería más completa puedes ejecutar `python test_api.py` con el servidor en marcha.
 
 ## Troubleshooting
 
@@ -222,16 +211,6 @@ Cierra el servidor, borra `tareas.db` si no te importa perder datos locales, y v
 
 **El cliente no conecta**  
 Comprueba que el servidor esté corriendo y prueba `http://localhost:5000/status` en el navegador. Si un sitio usa `127.0.0.1` y otro `localhost`, las cookies pueden no coincidir; mejor unificar la URL.
-
-## Desarrollo y expansiones futuras
-
-Algunas ideas naturales a partir de lo que ya hay:
-
-- CRUD real de tareas ligado a `usuario_id`
-- Filtros o listados por usuario
-- Mejoras de despliegue: variable de entorno para `secret_key`, HTTPS, rate limiting
-
-Nada de eso viene implementado en esta versión mínima; la lista es orientativa.
 
 ## Respuestas conceptuales
 
