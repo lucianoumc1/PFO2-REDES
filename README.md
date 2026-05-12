@@ -192,10 +192,14 @@ curl -X POST http://localhost:5000/login \
 ```bash
 curl -X GET http://localhost:5000/tareas
 ```
-<img width="1586" height="910" alt="screenWeb" src="https://github.com/user-attachments/assets/1f19f279-96b0-4e38-b992-f7f6d45c8d26" />
-<img width="484" height="528" alt="screen3" src="https://github.com/user-attachments/assets/7337c65b-726c-4250-b3ce-2b83e25a7822" />
-<img width="577" height="983" alt="screen2" src="https://github.com/user-attachments/assets/e0ad324c-7ad8-461d-afef-4ad13d1e7afa" />
+**
 <img width="638" height="952" alt="screen1" src="https://github.com/user-attachments/assets/605d4879-07b0-480f-9563-478bb4893a42" />
+**
+<img width="577" height="983" alt="screen2" src="https://github.com/user-attachments/assets/e0ad324c-7ad8-461d-afef-4ad13d1e7afa" />
+**
+<img width="484" height="528" alt="screen3" src="https://github.com/user-attachments/assets/7337c65b-726c-4250-b3ce-2b83e25a7822" />
+**
+<img width="1586" height="910" alt="screenWeb" src="https://github.com/user-attachments/assets/1f19f279-96b0-4e38-b992-f7f6d45c8d26" />
 
 
 ## Troubleshooting
